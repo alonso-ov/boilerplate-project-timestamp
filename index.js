@@ -53,15 +53,20 @@ app.get("/api/:date?", (req, res) => {
   if( !(date) ) {
     date = new Date()
 
+  // if date is a number
   } else if ( /^\d+$/.test(date) ){
-
-    date = new Date(date * 1000)
+    date = new Date(parseInt(date))
 
   } else {
-    date = new Date(date)
-  }
 
-  console.log(date)
+    date = new Date(date)
+
+    if (date == "Invalid Date")
+
+    res.json({
+      error: "Invalid Date"
+    })
+  }
 
   res.json({
     unix: date.getTime(),
