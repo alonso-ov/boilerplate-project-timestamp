@@ -5,18 +5,18 @@
 var express = require('express');
 var app = express();
 
-var livereload = require('livereload')
-var connectLiveReload = require('connect-livereload')
+// var livereload = require('livereload')
+// var connectLiveReload = require('connect-livereload')
 
-const liveReloadServer = livereload.createServer()
+// const liveReloadServer = livereload.createServer()
 
-liveReloadServer.server.once("connection", () => {
-  setTimeout(() => {
-    liveReloadServer.refresh("/")
-  }, 100)
-})
+// liveReloadServer.server.once("connection", () => {
+//   setTimeout(() => {
+//     liveReloadServer.refresh("/")
+//   }, 100)
+// })
 
-app.use(connectLiveReload())
+// app.use(connectLiveReload())
 
 // enable CORS (https://en.wikipedia.org/wiki/Cross-origin_resource_sharing)
 // so that your API is remotely testable by FCC 
